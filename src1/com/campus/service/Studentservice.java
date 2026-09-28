@@ -1,8 +1,8 @@
-package com.Campus.service;
+package com.campus.service;
 
-import com.Campus.model.student;
+import com.campus.model.Student;
 
-public class studentservice {
+public class Studentservice {
     //calculate total marks of a student
     int calculatetotal(Student student){
         int[] marks = student.getMarks();
@@ -58,7 +58,6 @@ public class studentservice {
         if(marks == null || marks.length == 0){
             return 'F';
         }
-        int total = calculatetotal(student);
         int average = (int)calculateaverage(student);
         if(average >= 90){
             return 'A';

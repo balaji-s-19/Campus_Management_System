@@ -1,6 +1,6 @@
-package com.Campus.model;
+package com.campus.model;
 
-public class student{
+public abstract class Student{
     //Enacapsulation - data hiding
     // instance variables
     private int studentid;
@@ -13,7 +13,7 @@ public class student{
     private static int studentcount = 0;
 
     //default constructor
-    public student(){
+    public Student(){
 
         studentcount++;
 
@@ -21,7 +21,7 @@ public class student{
     
 
     //parameterized constructor
-    public student(int studentid, String studentname, int age, String department, int[] marks){
+    public Student(int studentid, String studentname, int age, String department, int[] marks){
         this.studentid = studentid;
         this.studentname = studentname;
         this.age = age;
@@ -68,14 +68,23 @@ public class student{
         System.out.println("Age: " + age);
         System.out.println("Department: " + department);
     }
-    public void displaystudentinfo(boolean showmarks){
+    public void displayStudentinfo(boolean showmarks){
         displayStudentinfo();
         if(showmarks){
             System.out.print("Marks: "+java.util.Arrays.toString(marks));
          }
     }
-    //static method belong to class,not to object
+    //abstract methode` 
+    public abstract void studentType();
+
+
     public static void displayStudentCount(){
         System.out.println("Total number of students: " + studentcount);
+    }
+    public void eligbleForScholarship() {
+        System.out.println("Student is eligible for scholarship.");
+    }
+    public void generatereport() {
+        System.out.println("student report card");
     }
 } 
